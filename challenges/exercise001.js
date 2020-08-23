@@ -41,12 +41,12 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  //console.log(words);
+  revwrds = []
   for(var i= 0; i<words.length; i++)
-  {//console.log(words[i]);
-    console.log(words[i].split("").reverse().join(""));
-  //return words[i].split("").reverse().join("");
-  }
+  {x= words[i].split("").reverse().join("");
+    revwrds.push(x);}
+  //console.log(revwrds);
+  return revwrds;
 }
 
 function countLinuxUsers(users) {
