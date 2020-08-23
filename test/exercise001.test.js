@@ -40,6 +40,7 @@ describe("addVAT", () => {
 
   test("adds a VAT of 17.5% to a price of 33.50", () => {
     expect(addVAT(33.5, 17.5)).toBe(39.36);
+    //remove 25
   });
 
   test("adds a VAT of 0% to a price of 25", () => {
@@ -98,7 +99,7 @@ describe("reverseAllWords", () => {
     ).toEqual(["tsej", "ahcom", "cepsr", "enimsaj", "muineles"]);
   });
 });
-
+/*
 describe("countLinuxUsers", () => {
   test("returns 0 if no Linux users found", () => {
     const users = [
@@ -151,4 +152,4 @@ describe("simpleFizzBuzz", () => {
   test("returns 'fizzbuzz' if the number is divisible by 3 and 5", () => {
     expect(simpleFizzBuzz(15)).toBe("fizzbuzz");
   });
-});
+}); */
