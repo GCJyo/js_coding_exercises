@@ -54,15 +54,28 @@ function countLinuxUsers(users) {
   let count = 0;
   for (let i=0; i<users.length; i++) {
     if (users[i].type === "Linux")
-       count++; }
+       count++;}
    return count;
     //console.log(count);
 }
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
-}
+  var total = 0;
+  for (var i = 0; i < scores.length; i++) {
+    total += scores[i];
+    }
+    //var mn = (total / (scores.length));
+    // var result = (mn - Math.floor(mn)) !== 0;
+    // if (result)
+    // {return Number(mn.toFixed(2));}
+    // else {return mn;}
+  if ((Number.isInteger(total/scores.length)) == false) {
+    result = Number(parseFloat(total/scores.length).toFixed(2));}
+  else {
+    result = (total/scores.length);}
+    return result;
+  }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
