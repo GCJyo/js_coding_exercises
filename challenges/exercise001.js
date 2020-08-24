@@ -14,14 +14,27 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  return originalPrice+(originalPrice*vatRate)/100;
-  console.log(originalPrice+(originalPrice*vatRate)/100);
+  if (Number.isInteger(originalPrice+(originalPrice*vatRate)/100) == false) {
+    result = Number(parseFloat(originalPrice+(originalPrice*vatRate)/100).toFixed(2));
+  } else {
+    result = (originalPrice+(originalPrice*vatRate)/100);
+  }
+  return result;
+  // return originalPrice+(originalPrice*vatRate)/100;
+  // console.log(originalPrice+(originalPrice*vatRate)/100);
   // Add your code here!
 }
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  return getSalePrice = originalPrice - (originalPrice*reduction)/100 ;
+
+  if (Number.isInteger(originalPrice - (originalPrice*reduction)/100) == false) {
+    result = Number(parseFloat(originalPrice - (originalPrice*reduction)/100).toFixed(2));
+  } else {
+    result = (originalPrice - (originalPrice*reduction)/100);
+  }
+  return result;
+  // return getSalePrice = originalPrice - (originalPrice*reduction)/100 ;
   // Add your code here!
 }
 
@@ -65,21 +78,36 @@ function getMeanScore(scores) {
   for (var i = 0; i < scores.length; i++) {
     total += scores[i];
     }
-    //var mn = (total / (scores.length));
-    // var result = (mn - Math.floor(mn)) !== 0;
-    // if (result)
-    // {return Number(mn.toFixed(2));}
-    // else {return mn;}
-  if ((Number.isInteger(total/scores.length)) == false) {
+    if ((Number.isInteger(total/scores.length)) == false) {
     result = Number(parseFloat(total/scores.length).toFixed(2));}
   else {
     result = (total/scores.length);}
     return result;
+    //var mn = (total / (scores.length)); -- this works too !
+    // var result = (mn - Math.floor(mn)) !== 0;
+    // if (result)
+    // {return Number(mn.toFixed(2));}
+    // else {return mn;}
   }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+  var num = 0;
+  switch (true) {
+    case (num/3 == 0):
+      result = "fizz";
+      break;
+    case (num/5 == 0):
+      result = "buzz";
+      break;
+    case (num/3 !== 0 & num/4 !== 0):
+      result = 4;
+      break;
+    case (num/3 == 0 || num/4 == 0):
+      result = "fizzbuzz";
+      break;
+  }
+  return result;
 }
 module.exports = {
   capitalize,
