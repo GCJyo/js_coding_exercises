@@ -28,7 +28,7 @@ function addVAT(originalPrice, vatRate) {
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-
+  let result = " ";
   if (Number.isInteger(originalPrice - (originalPrice*reduction)/100) == false) {
     result = Number(parseFloat(originalPrice - (originalPrice*reduction)/100).toFixed(2));
   } else {
@@ -55,7 +55,9 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  revwrds = []
+
+  let revwrds = [];
+  let x = " ";
   for(var i= 0; i<words.length; i++)
   {x= words[i].split("").reverse().join("");
     revwrds.push(x);}
@@ -75,6 +77,7 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
+  let result = " ";
   var total = 0;
   for (var i = 0; i < scores.length; i++) {
     total += scores[i];
@@ -94,7 +97,7 @@ function getMeanScore(scores) {
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
   let result = " ";
-  for (i=1; i<=n; i++) {
+  for (let i=1; i<=n; i++) {
     if ((i%3===0) && (i%5===0)) {result = "fizzbuzz";}
     else if (i%3 === 0) {result = "fizz";}
     else if (i%5 === 0) {result = "buzz";}
