@@ -92,23 +92,15 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  var num = 0;
-  switch (true) {
-    case (num/3 == 0):
-      result = "fizz";
-      break;
-    case (num/5 == 0):
-      result = "buzz";
-      break;
-    case (num/3 !== 0 & num/4 !== 0):
-      result = 4;
-      break;
-    case (num/3 == 0 || num/4 == 0):
-      result = "fizzbuzz";
-      break;
-  }
-  return result;
+  let result = " ";
+  for (i=1; i<=n; i++) {
+    if ((i%3===0) && (i%5===0)) {result = "fizzbuzz";}
+    else if (i%3 === 0) {result = "fizz";}
+    else if (i%5 === 0) {result = "buzz";}
+    else {result = i ;}}
+    return result;
 }
+
 module.exports = {
   capitalize,
   generateInitials,
