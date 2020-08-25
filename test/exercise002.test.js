@@ -72,7 +72,7 @@ describe("getBusNumbers", () => {
     expect(getBusNumbers(43728)).toBe(1094);
   });
 });
-/*
+
 describe("countSheep", () => {
   test("returns 0 if there are 0 sheep in the array", () => {
     const arr = ["dog", "badger", "dog", "dog", "chicken"];
@@ -144,4 +144,4 @@ describe("hasMPostCode", () => {
     };
     expect(hasMPostCode(person)).toBe(false);
   });
-});*/
+});
