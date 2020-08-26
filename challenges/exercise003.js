@@ -1,12 +1,29 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  // Your code here!
+  var sqrs = [ ];
+  for(let i in nums) {
+  sqrs.push(Math.pow(nums[i], 2));} return sqrs;
 }
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Your code here!
-}
+  var result="";
+  words.forEach(myFunction);
+  function myFunction(i, indx) {
+          var add = i.toLowerCase();
+    result += (indx === 0 ? add : add[0].toUpperCase() + add.slice(1));
+      };
+      return result;
+  }
+  //-------------------------/does not work on 2+words
+  // var ccWrd, result = " ";
+  // for ( let i in words) {
+  //   ccWrd = words.join("_");
+  //   console.log(ccWrd);
+  //   result = (ccWrd.replace(/_([a-z])/,function(m)
+  //             {return m.toUpperCase();})).replace(/_/g,'').trim('');
+  //   } return result;
+  //}
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
