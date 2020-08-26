@@ -16,15 +16,18 @@ function getBusNumbers(people) {
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   let count = 0;
-  for (let i=0; i<arr.length; i++) {
-    if (arr[i] === "sheep")
-       count++;}
+  for (let i in arr) {
+    if (arr[i] === "sheep") {
+       count++;}}
    return count;
 }
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+  for (let i in person) {
+   return ((
+     ((person.address.city) == "Manchester") &&
+     (person.address.postCode.startsWith('M')) === true) ? true : false);
 }
 }
 
