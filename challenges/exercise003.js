@@ -15,26 +15,28 @@ function camelCaseWords(words) {
       };
       return result;
   }
-  //-------------------------/does not work on 2+words
-  // var ccWrd, result = " ";
-  // for ( let i in words) {
-  //   ccWrd = words.join("_");
-  //   console.log(ccWrd);
-  //   result = (ccWrd.replace(/_([a-z])/,function(m)
-  //             {return m.toUpperCase();})).replace(/_/g,'').trim('');
-  //   } return result;
-  //}
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
-}
+  let count, tc = 0;
+  for (let i = 0; i<=people.length; i++) {
+    //console.log(people[i]);
+    for (let j = 0; j<=people[i].subjects.length; j++){
+        //console.log((people.[i].subjects[j]) === "undefined");
+        //console.log(people.[i].subjects[j]);
+        if (typeof(people.[i].subjects[j]) !== "undefined") {
+          //console.log((people.[i].subjects[j]));}
+          count++;}
+        } //return count;
+      } tc = tc + count;
+      console.log(count);
+    }
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   // Your code here!
-}
+ }
 
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
