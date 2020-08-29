@@ -18,19 +18,14 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
+  let j = 0;
+  const subArr = [];
   let count, tc = 0;
-  for (let i = 0; i<=people.length; i++) {
-    //console.log(people[i]);
-    for (let j = 0; j<=people[i].subjects.length; j++){
-        //console.log((people.[i].subjects[j]) === "undefined");
-        //console.log(people.[i].subjects[j]);
-        if (typeof(people.[i].subjects[j]) !== "undefined") {
-          //console.log((people.[i].subjects[j]));}
-          count++;}
-        } //return count;
-      } tc = tc + count;
-      console.log(count);
-    }
+  for (let i = 0; i<people.length; i++) {
+    count = (people[i].subjects.length);
+    tc = tc + count ;
+  }return tc;
+  }
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");

@@ -45,7 +45,7 @@ describe("getSquares", () => {
 });
 
 describe("getTotalSubjects", () => {
-  test("returns 0 if no people have subjects", () => {
+test("returns 0 if no people have subjects", () => {
     const people = [
       { name: "Billy", subjects: [] },
       { name: "Claude", subjects: [] },
@@ -62,7 +62,6 @@ describe("getTotalSubjects", () => {
     ];
     expect(getTotalSubjects(people)).toBe(1);
   });
-
   test("returns the correct number of subjects studied in total for all people", () => {
     const people = [
       { name: "Billy", subjects: ["welsh", "spanish"] },
