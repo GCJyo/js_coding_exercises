@@ -14,6 +14,13 @@ function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
   // Your code here
+  const namesBWith = [];
+  for (let i in names) {
+    if (names[i].charAt(0) === char) {
+      let iteam = names[i];
+      namesBWith.push(iteam);
+    };
+  }; return namesBWith;
 }
 
 function findVerbs(words) {
