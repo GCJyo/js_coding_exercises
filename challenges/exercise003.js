@@ -18,8 +18,6 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  let j = 0;
-  const subArr = [];
   let count, tc = 0;
   for (let i = 0; i<people.length; i++) {
     count = (people[i].subjects.length);
@@ -30,13 +28,25 @@ function getTotalSubjects(people) {
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  // Your code here!
- }
+  let result = false
+  for (let i in menu) {
+  if (menu[i]['ingredients'].includes(ingredient)) {
+    return true
+  }
+  }
+  return result
+}
 
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+  const myarr = [];
+    for (let i in arr1) {
+      if(!myarr.includes(arr1[i]) && arr2.includes(arr1[i])) {
+      myarr.push(arr1[i])
+    }
+  }
+  return myarr.sort()
 }
 
 module.exports = {

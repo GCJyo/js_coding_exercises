@@ -71,11 +71,11 @@ test("returns 0 if no people have subjects", () => {
     expect(getTotalSubjects(people)).toBe(9);
   });
 });
-/*
+
 describe("checkIngredients", () => {
   test("returns false if no menu items include the specified ingredient", () => {
     const menu = [
-      {
+     {
         name: "tofu fritters",
         ingredients: ["tofu", "egg yolk", "breadbrumbs", "paprika"]
       },
@@ -93,7 +93,7 @@ describe("checkIngredients", () => {
           "vanilla essence"
         ]
       },
-      {
+     {
         name: "hummus",
         ingredients: ["chickpeas", "tahini", "lemon", "garlic", "salt"]
       }
@@ -101,6 +101,7 @@ describe("checkIngredients", () => {
 
     expect(checkIngredients(menu, "milk")).toBe(false);
   });
+
 
   test("returns true if a menu item includes the specified ingredient", () => {
     const menu = [
@@ -162,4 +163,4 @@ describe("duplicateNumbers", () => {
     arr2 = [3, 3, 3, 4, 5];
     expect(duplicateNumbers(arr1, arr2)).toEqual([3]);
   });
-});*/
+});
