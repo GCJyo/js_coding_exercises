@@ -70,7 +70,17 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+  const lcsentences = [];
+  const wordsMatch = [];
+  let lcstr = str.toLowerCase();
+    // Your code here
+  for (let i in sentences) {
+    lcsentences.push(sentences[i].toLowerCase());
+    if (lcsentences[i].includes(str)) {
+      let iteam = sentences[i];
+      wordsMatch.push(iteam);
+    };
+  }; return wordsMatch;
 }
 
 function getLongestSides(triangles) {
