@@ -9,7 +9,7 @@ const {
   getLongestSides
 } = require("../challenges/exercise004");
 
-describe("findSmallNums", () => {
+describe.only("findSmallNums", () => {
   test("returns an array of numbers smaller than 1", () => {
     expect(findSmallNums([8, 1, 1.3, 0.9, 0.4, -1])).toEqual([0.9, 0.4, -1]);
     expect(findSmallNums([-7, -243])).toEqual([-7, -243]);
@@ -146,7 +146,7 @@ describe("findSentencesContaining", () => {
   });
 });
 
-describe.only("getLongestSides", () => {
+describe("getLongestSides", () => {
   test("returns the longest side of each set of triangle data", () => {
     const data = [[6, 7, 10], [9, 3, 6], [6, 3, 5], [6, 13, 12], [7, 12, 8]];
     expect(getLongestSides(data)).toEqual([10, 9, 6, 13, 12]);
