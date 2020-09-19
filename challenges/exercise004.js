@@ -83,7 +83,10 @@ function getIntegers(nums) {
 function getCities(users) {
   if (!users) throw new Error("users is required");
   // Your code here
-  const uCities = [];
+  const uCities = users.map(function(item) {
+    return item.data.city.displayName;
+  }); return uCities;
+  /*const uCities = [];
   users.forEach(function(item) {
     let uc = item.data.city.displayName;
     uCities.push(uc);
@@ -98,7 +101,10 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
-  const gtsqrttd = [];
+  const gtsqrttd = nums.map(function(item) {
+    return Math.round((Math.sqrt(item)*100))/100;
+  }); return gtsqrttd;
+  /*const gtsqrttd = [];
   nums.forEach(function(item) {
     gtsqrttd.push(Math.round((Math.sqrt(item)*100))/100);
   }); return gtsqrttd;
@@ -112,7 +118,10 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  const wordsMatch = [];
+  const wordsMatch = sentences.filter(function(item) {
+    if (item.toLowerCase().includes(str.toLowerCase())) {return true;} else {return false;}
+  }); return wordsMatch;
+  /*const wordsMatch = [];
   sentences.forEach(function(item) {
     if (item.toLowerCase().includes(str.toLowerCase())) {wordsMatch.push(item);};
   }); return wordsMatch;
@@ -131,7 +140,10 @@ function findSentencesContaining(sentences, str) {
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
-  const largestNumber = [];
+  const largestSides = triangles.map(function(item) {
+    return Math.max(...item);
+  }); return largestSides;
+  /*const largestNumber = [];
   triangles.forEach(function(item) {
     largestNumber.push(Math.max(...item))
   }); return(largestNumber);

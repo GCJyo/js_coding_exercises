@@ -58,7 +58,7 @@ describe("findVerbs", () => {
   });
 });
 
-describe.only("getIntegers", () => {
+describe("getIntegers", () => {
   test("returns an array containing only integers", () => {
     const nums = [1, 3.5, 2.1, 1, 4, 9];
     expect(getIntegers(nums)).toEqual([1, 1, 4, 9]);
@@ -146,7 +146,7 @@ describe("findSentencesContaining", () => {
   });
 });
 
-describe("getLongestSides", () => {
+describe.only("getLongestSides", () => {
   test("returns the longest side of each set of triangle data", () => {
     const data = [[6, 7, 10], [9, 3, 6], [6, 3, 5], [6, 13, 12], [7, 12, 8]];
     expect(getLongestSides(data)).toEqual([10, 9, 6, 13, 12]);
