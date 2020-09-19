@@ -67,36 +67,46 @@ function getCities(users) {
   if (!users) throw new Error("users is required");
   // Your code here
   const uCities = [];
+  users.forEach(function(item) {
+    let uc = item.data.city.displayName;
+    uCities.push(uc);
+  }); return uCities;
+  /*const uCities = [];
   for (let i in users) {
      let iteam = users[i].data.city.displayName;
      uCities.push(iteam);
-  }; return uCities;
+  }; return uCities;*/
 }
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
   const gtsqrttd = [];
+  nums.forEach(function(item) {
+    gtsqrttd.push(Math.round((Math.sqrt(item)*100))/100);
+  }); return gtsqrttd;
+  /*const gtsqrttd = [];
   for (let i in nums) {
     let iteam  = Math.round((Math.sqrt(nums[i])*100))/100;
     gtsqrttd.push(iteam);
-  }; return gtsqrttd;
+  }; return gtsqrttd;*/
 }
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  const lcsentences = [];
   const wordsMatch = [];
-  let lcstr = str.toLowerCase();
+  sentences.forEach(function(item) {
+    if (item.toLowerCase().includes(str.toLowerCase())) {wordsMatch.push(item);};
+  }); return wordsMatch;
     // Your code here
-  for (let i in sentences) {
+  /*for (let i in sentences) {
     lcsentences.push(sentences[i].toLowerCase());
     if (lcsentences[i].includes(str)) {
       let iteam = sentences[i];
       wordsMatch.push(iteam);
     };
-  }; return wordsMatch;
+  }; return wordsMatch;*/
 }
 
 function getLongestSides(triangles) {
