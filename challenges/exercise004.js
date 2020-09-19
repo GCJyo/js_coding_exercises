@@ -86,7 +86,14 @@ function findSentencesContaining(sentences, str) {
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
-}
+  const largestNumber = [];
+  for (let i in triangles) {
+    const itriangle = triangles[i];
+    let iteam = Math.max(...itriangle);
+    largestNumber.push(iteam);
+    //console.log(largestNumber);
+  }; return largestNumber;
+  }
 
 module.exports = {
   findSmallNums,
