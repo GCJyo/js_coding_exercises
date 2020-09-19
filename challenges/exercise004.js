@@ -100,7 +100,9 @@ function findSentencesContaining(sentences, str) {
     if (item.toLowerCase().includes(str.toLowerCase())) {wordsMatch.push(item);};
   }); return wordsMatch;
     // Your code here
-  /*for (let i in sentences) {
+    /*const lcsentences = [];
+    const  wordsMatch = [];
+   for (let i in sentences) {
     lcsentences.push(sentences[i].toLowerCase());
     if (lcsentences[i].includes(str)) {
       let iteam = sentences[i];
@@ -113,12 +115,16 @@ function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
   const largestNumber = [];
+  triangles.forEach(function(item) {
+    largestNumber.push(Math.max(...item))
+  }); return(largestNumber);
+  /*const largestNumber = [];
   for (let i in triangles) {
     const itriangle = triangles[i];
     let iteam = Math.max(...itriangle);
     largestNumber.push(iteam);
     //console.log(largestNumber);
-  }; return largestNumber;
+  }; return largestNumber;*/
   }
 
 module.exports = {
