@@ -51,12 +51,16 @@ function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
   const onlyInts = [];
+  nums.forEach(function(item) {
+    if (Number.isInteger(item)) { onlyInts.push(item)}
+  }); return onlyInts;
+  /*const onlyInts = [];
   for (let i in nums) {
     let iteam = nums[i];
     if (Number.isInteger(iteam)) {
       onlyInts.push(iteam);
     };
-  }; return onlyInts;
+  }; return onlyInts;*/
 }
 
 function getCities(users) {
