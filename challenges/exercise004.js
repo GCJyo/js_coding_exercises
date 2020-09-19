@@ -1,6 +1,11 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  const lessnums = [];
+
+const smallNums = nums.filter(function(item) {
+  if (item < 1) {return true;} else {return false;}
+}); return smallNums;
+
+  /*const lessnums = [];
   nums.forEach(function(item) {
     if (item < 1) {lessnums.push(item)};
   }); return lessnums;
@@ -17,7 +22,12 @@ for (let i in nums) {
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  const namesBWith = [];
+
+const namesBWith = names.filter(function(item) {
+  if (item.charAt(0) === char) {return true;} else {return false;}
+}); return namesBWith;
+
+  /*const namesBWith = [];
   names.forEach(function(item) {
     if (item.charAt(0) === char) {namesBWith.push(item)};
   }); return namesBWith;
@@ -34,6 +44,8 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
+
+
   const theseVerbs = [];
   words.forEach(function(item) {
     if(item.slice(0,3) == "to ") {theseVerbs.push(item)};

@@ -18,7 +18,7 @@ describe("findSmallNums", () => {
   });
 });
 
-describe("findNamesBeginningWith", () => {
+describe.only("findNamesBeginningWith", () => {
   test("returns an array of names beginning with the specified character", () => {
     const names = ["Sally", "Dave", "Susan", "Geoff", "Riley", "Sam"];
     expect(findNamesBeginningWith(names, "S")).toEqual([
@@ -146,7 +146,7 @@ describe("findSentencesContaining", () => {
   });
 });
 
-describe.only("getLongestSides", () => {
+describe("getLongestSides", () => {
   test("returns the longest side of each set of triangle data", () => {
     const data = [[6, 7, 10], [9, 3, 6], [6, 3, 5], [6, 13, 12], [7, 12, 8]];
     expect(getLongestSides(data)).toEqual([10, 9, 6, 13, 12]);
