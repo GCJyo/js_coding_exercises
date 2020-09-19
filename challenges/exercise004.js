@@ -17,26 +17,34 @@ for (let i in nums) {
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  // Your code here
   const namesBWith = [];
+  names.forEach(function(item) {
+    if (item.charAt(0) === char) {namesBWith.push(item)};
+  }); return namesBWith;
+  // Your code here
+  /*const namesBWith = [];
   for (let i in names) {
     if (names[i].charAt(0) === char) {
       let iteam = names[i];
       namesBWith.push(iteam);
     };
-  }; return namesBWith;
+  }; return namesBWith;*/
 }
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
   const theseVerbs = [];
+  words.forEach(function(item) {
+    if(item.slice(0,3) == "to ") {theseVerbs.push(item)};
+  }); return theseVerbs;
+  /*const theseVerbs = [];
   for (let i in words) {
     if (words[i].slice(0,3) == "to ") {
          let iteam = words[i];
          theseVerbs.push(iteam);
     };
-  }; return theseVerbs;
+  }; return theseVerbs;*/
 }
 
 function getIntegers(nums) {
