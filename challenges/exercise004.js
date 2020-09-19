@@ -45,8 +45,10 @@ function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
 
-
-  const theseVerbs = [];
+const theseVerbs = words.filter(function(item) {
+  if(item.slice(0,3) == "to ") {return true;} else {return false;}
+}); return theseVerbs;
+  /*const theseVerbs = [];
   words.forEach(function(item) {
     if(item.slice(0,3) == "to ") {theseVerbs.push(item)};
   }); return theseVerbs;
@@ -62,7 +64,10 @@ function findVerbs(words) {
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
-  const onlyInts = [];
+  const onlyInts = nums.filter(function(item) {
+    if(Number.isInteger(item)) {return true;} else {return false;}
+  }); return onlyInts;
+  /*const onlyInts = [];
   nums.forEach(function(item) {
     if (Number.isInteger(item)) { onlyInts.push(item)}
   }); return onlyInts;
