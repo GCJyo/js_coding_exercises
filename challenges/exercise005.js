@@ -27,7 +27,7 @@ const reverseNumber = n => {
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   // Your code here!
-let aSum = 0;
+  let aSum = 0;
   for (let i in arrs){
     let s = 0;
     arrs[i].forEach(function(item) {
@@ -40,7 +40,18 @@ let aSum = 0;
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
-};
+   if (arr.length == 0) {return []}
+   else {
+   ([arr[0], arr[arr.length - 1]] = [arr[arr.length-1], arr[0]]);
+   return arr;
+   }
+  /*if (arr.length == 0) {return([])}
+  else { first = arr[0];
+  last = arr[arr.length-1];
+  arr[0] = last;
+  arr[arr.length-1] = first;
+  return(arr);}*/
+  };
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
