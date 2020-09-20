@@ -28,12 +28,9 @@ describe("findNextNumber", () => {
   });
 });
 
-describe.only("count1sand0s", () => {
+describe("count1sand0s", () => {
   test("returns an object with the count of 1s and 0s in a string", () => {
-    expect(count1sand0s("11000")).toEqual({
-      1: 2,
-      0: 3
-    });
+    expect(count1sand0s("11000")).toEqual({1: 2, 0: 3});
 
     expect(count1sand0s("0101010111")).toEqual({
       1: 6,
@@ -52,9 +49,9 @@ describe.only("count1sand0s", () => {
   });
 });
 
-describe("reverseNumber", () => {
+describe.only("reverseNumber", () => {
   test("reverses the digits of a number", () => {
-    expect(reverseNumber(5)).toBe(5);
+    //expect(reverseNumber(5)).toBe(5);
     expect(reverseNumber(104)).toBe(401);
     expect(reverseNumber(12345)).toBe(54321);
     expect(reverseNumber(100)).toBe(1); // No leading 0 necessary
