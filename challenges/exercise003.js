@@ -28,13 +28,13 @@ function getTotalSubjects(people) {
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  let result = false
+  let result = false;
   for (let i in menu) {
   if (menu[i]['ingredients'].includes(ingredient)) {
-    return true
+    return true;
   }
   }
-  return result
+  return result;
 }
 
 function duplicateNumbers(arr1, arr2) {
@@ -43,10 +43,10 @@ function duplicateNumbers(arr1, arr2) {
   const myarr = [];
     for (let i in arr1) {
       if(!myarr.includes(arr1[i]) && arr2.includes(arr1[i])) {
-      myarr.push(arr1[i])
+      myarr.push(arr1[i]);
     }
   }
-  return myarr.sort()
+  return myarr.sort();
 }
 
 module.exports = {

@@ -45,24 +45,23 @@ const arrShift = arr => {
    ([arr[0], arr[arr.length - 1]] = [arr[arr.length-1], arr[0]]);
    return arr;
    }
-  /*if (arr.length == 0) {return([])}
-  else { first = arr[0];
-  last = arr[arr.length-1];
-  arr[0] = last;
-  arr[arr.length-1] = first;
-  return(arr);}*/
   };
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
+
 };
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
-};
+  const wordfrq = {};
+  let words = str.toLowerCase().replace(/[^\w\s]/gi, '').split(" ");
+  words.forEach(word => (wordfrq[word] === undefined) ? wordfrq[word] = 1 : wordfrq[word]++);
+  return wordfrq;
+  };
 
 module.exports = {
   findNextNumber,

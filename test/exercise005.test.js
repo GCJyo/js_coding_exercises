@@ -49,7 +49,7 @@ describe("count1sand0s", () => {
   });
 });
 
-describe.only("reverseNumber", () => {
+describe("reverseNumber", () => {
   test("reverses the digits of a number", () => {
     //expect(reverseNumber(5)).toBe(5);
     expect(reverseNumber(104)).toBe(401);
@@ -58,14 +58,14 @@ describe.only("reverseNumber", () => {
   });
 });
 
-describe.only("sumArrays", () => {
+describe("sumArrays", () => {
   test("returns the total of the numbers in all sub arrays", () => {
     const arrs = [[1, 2, 3], [6, 3, 1], [1], [9, 10], [3, 5]];
     expect(sumArrays(arrs)).toBe(44);
   });
 });
 
-describe.only("arrShift", () => {
+describe("arrShift", () => {
   test("returns an array with the first and last items swapped", () => {
     expect(arrShift([1, 2])).toEqual([2, 1]);
     expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
@@ -78,7 +78,7 @@ describe.only("arrShift", () => {
   });
 });
 
-describe("findNeedle", () => {
+describe.only("findNeedle", () => {
   test("returns true if any of the properties of an object contain the specified string", () => {
     const obj1 = {
       name: "LINNMON",
