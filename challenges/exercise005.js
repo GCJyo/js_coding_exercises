@@ -51,17 +51,22 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
-
-};
-
-const getWordFrequencies = str => {
-  if (str === undefined) throw new Error("str is required");
+  const obj = Object.values(haystack);
+  if (obj.join(" ").match(new RegExp(searchTerm, 'i'))) {
+    return true
+    } else {
+    return false;
+  }
+  };
+function getWordFrequencies(str) {
+  if (str === undefined)
+    throw new Error("str is required");
   // Your code here!
   const wordfrq = {};
   let words = str.toLowerCase().replace(/[^\w\s]/gi, '').split(" ");
   words.forEach(word => (wordfrq[word] === undefined) ? wordfrq[word] = 1 : wordfrq[word]++);
   return wordfrq;
-  };
+}
 
 module.exports = {
   findNextNumber,
