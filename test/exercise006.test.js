@@ -1,5 +1,5 @@
 const { TestScheduler } = require("jest");
-const {sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix } = require ("../challenges/exercise006");
+const {sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix, areWeCovered  } = require ("../challenges/exercise006");
 describe("sumMultiples", () => {
     test("throws an error if not an array", () => {
         expect(()=>{
@@ -99,4 +99,15 @@ describe("createMatrix", () => {
         expect(createMatrix(2,"foo")).toEqual([["foo","foo"],["foo","foo"]]);
         expect(createMatrix(3,"foo")).toEqual([["foo","foo","foo"],["foo","foo","foo"],["foo","foo","foo"]]); 
         });
+});
+describe("areWeCovered", () => {
+    test("check that 3 staff are on rota per each day",() => {
+        const staff = [{ name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+        { name: "Pedro", rota: ["Monday", "Wednesday", "Friday"] },
+        { name: "Molly", rota: ["Monday", "Tuesday", "Thursday"] },
+        { name: "Kelly", rota: [ "Tuesday", "Friday"] },
+        ];
+        expect(areWeCovered(staff,"Monday")).toBe(true);
+        expect(areWeCovered(staff,"Wednesday")).toBe(false);
+    });
 });
