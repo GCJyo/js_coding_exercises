@@ -1,5 +1,5 @@
 const { TestScheduler } = require("jest");
-const {sumMultiples, isValidDNA, getComplementaryDNA } = require ("../challenges/exercise006");
+const {sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix } = require ("../challenges/exercise006");
 describe("sumMultiples", () => {
     test("throws an error if not an array", () => {
         expect(()=>{
@@ -24,7 +24,7 @@ describe("sumMultiples", () => {
         const expected = 30;
         expect(result).toBe(expected);
     });
-    test("returm 0 if there are no multiples of 3 or 5", () => {
+    test("return 0 if there are no multiples of 3 or 5", () => {
         expect(sumMultiples([1,2,8,13,7])).toBe(0);
     });
 });
@@ -53,7 +53,6 @@ describe("isValidDNA",() => {
     });
 });
 describe("getComplementaryDNA",() => {
-    // testing of the 'validDNA' function happens above
     test("check that an invalid or empty DNA string returns false", () => {
         expect(() => {
             getComplementaryDNA("rtyt")
@@ -72,5 +71,32 @@ describe("getComplementaryDNA",() => {
         expect(getComplementaryDNA("ACTG")).toBe("TGAC")
         expect(getComplementaryDNA("TGAC")).toBe("ACTG")
         expect(getComplementaryDNA("TTT")).toBe("AAA")
+        });
+});
+describe("isItPrime",() => {
+    test("requires a Number", () => {
+        expect(() => {
+            isItPrime()
+        }).toThrow("Number required")
+        });
+    test("requires a Number", () => {
+        expect(() => {
+            isItPrime("dfr")
+        }).toThrow("must be a Number")
+        });
+    test("check that a valid number returns false", () => {
+        expect(isItPrime(4)).toBe(false);
+        expect(isItPrime(12)).toBe(false);
+        }); 
+    test("check that a valid number returns true", () => {
+        expect(isItPrime(7)).toBe(true);
+        expect(isItPrime(11)).toBe(true);
+        expect(isItPrime(13.0)).toBe(true);
+        }); 
+});
+describe("createMatrix", () => {
+    test("throws an errors if not a valid matrix", () => {
+        expect(createMatrix(2,"foo")).toEqual([["foo","foo"],["foo","foo"]]);
+        expect(createMatrix(3,"foo")).toEqual([["foo","foo","foo"],["foo","foo","foo"],["foo","foo","foo"]]); 
         });
 });
