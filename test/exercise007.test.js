@@ -1,5 +1,5 @@
 const { TestScheduler } = require("jest");
-const { sumDigits, createRange,getScreentimeAlertList, } = require("../challenges/exercise007");
+const { sumDigits, createRange,getScreentimeAlertList,hexToRGB, } = require("../challenges/exercise007");
 describe("sumDigits", () => {
     test("returns the sum of all digits", () => {
         expect(sumDigits(45)).toBe(9);
@@ -37,6 +37,10 @@ describe ("getScreentimeAlertList", () => {
         },
        ];
     expect(getScreentimeAlertList(users,"2019-05-02")).toEqual(["beth_1234"]);
-    
   });
 });
+describe.only ("hexToRGB", () => {
+    test("returns  Hex to RGB Alert", () => {
+    expect(hexToRGB("#ff3612")).toEqual([255,54,18]);
+    })
+})

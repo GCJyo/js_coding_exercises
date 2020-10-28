@@ -90,6 +90,11 @@ const createRange = (start, end, step) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  hexstr =hexStr.replace("#","");
+    hexstr = hexstr.trim();
+    var tab = hexstr.match(/.{1,2}/g);
+    var rgb = [parseInt(tab[0],16),parseInt(tab[1],16),parseInt(tab[2],16)];
+    return rgb;
 };
 
 /**
