@@ -1,5 +1,5 @@
 const { TestScheduler } = require("jest");
-const { sumDigits, createRange,getScreentimeAlertList,hexToRGB, } = require("../challenges/exercise007");
+const { sumDigits, createRange,getScreentimeAlertList,hexToRGB, findWinner } = require("../challenges/exercise007");
 describe("sumDigits", () => {
     test("returns the sum of all digits", () => {
         expect(sumDigits(45)).toBe(9);
@@ -39,8 +39,75 @@ describe ("getScreentimeAlertList", () => {
     expect(getScreentimeAlertList(users,"2019-05-02")).toEqual(["beth_1234"]);
   });
 });
-describe.only ("hexToRGB", () => {
+describe ("hexToRGB", () => {
     test("returns  Hex to RGB Alert", () => {
     expect(hexToRGB("#ff3612")).toEqual([255,54,18]);
     })
+})
+describe("findWinner", () => {
+    test("check if correct winner is returned", () => {
+        const B1 = [
+            ["X", "0", null],
+            ["X", null, "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(B1)).toBe("X")
+
+        const B2 = [
+            ["0", "0", null],
+            ["X", "0", "0"],
+            ["X", "X", "X"]
+        ]
+        expect(findWinner(B2)).toBe("X")
+
+        const B3 = [
+            ["0", "0", null],
+            ["X", "0", "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(B3)).toBe("0")
+
+        const B4 = [
+            ["0", "0", "X"],
+            ["X", "X", "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(B4)).toBe("X")
+    })
+    test("check if no winner is correctly returned", () => {
+        const B5 = [
+            ["0", "0", "X"],
+            [null, null, "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(B5)).toBe(null)
+
+        const B6 = [
+            [null, "0", null],
+            ["X", "0", "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(B6)).toBe(null)
+    })
+    test("check function requires a formatted board", () => {
+        expect(() => {
+            findWinner()
+        }).toThrow("board is required")
+        expect(() => {
+            findWinner("teststring")
+        }).toThrow("board must be an Array")
+        expect(() => {
+            findWinner([])
+        }).toThrow("board must contain a 3x3 array")
+
+        const ex1 = [
+            ["0", "0", null],
+            ["X", "0", "0"],
+            ["X", null]
+        ]
+        expect(() => {
+            findWinner(ex1)
+        }).toThrow("board must contain a 3x3 array")
+    })
+    
 })

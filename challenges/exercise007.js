@@ -88,7 +88,7 @@ const createRange = (start, end, step) => {
  * Hint: You will need to convert each hexadecimal value for R, G and B into its decimal equivalent!
  * @param {String} str
  */
-const hexToRGB = hexStr => {
+ const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
   hexstr =hexStr.replace("#","");
     hexstr = hexstr.trim();
@@ -109,6 +109,19 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  if (!Array.isArray(board)) throw new Error("board must be an Array");
+  if (board.length !== 3 || board[0].length !== 3 || board[1].length !== 3 || board[2].length !== 3 ) throw new Error("board must contain a 3x3 array");
+
+  let winner = null
+
+  for (let row = 0; row <= 2; row++) { if(board[row][0] == board[row][1] && board[row][0] == board[row][2]) { winner = board[row][0] }}
+  for (let col = 0; col <= 2; col++) { if(board[0][col] == board[1][col] && board[0][col] == board[2][col]) { winner = board[0][col] }}
+
+  if(board[0][0] == board[1][1] && board[0][0] == board[2][2]) { winner = board[0][0] }
+  if(board[2][0] == board[1][1] && board[2][0] == board[0][2]) { winner = board[2][0] }
+
+  return winner
+
 };
 
 module.exports = {
