@@ -1,6 +1,5 @@
 
 const {tvRemote} = require("../challenges/exercise008");
-//console.log(tvRemote);
 
 describe("tvRemote", () => {
   test("count of clicks", () => {

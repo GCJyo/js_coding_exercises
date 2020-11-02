@@ -51,10 +51,9 @@ describe("count1sand0s", () => {
 
 describe("reverseNumber", () => {
   test("reverses the digits of a number", () => {
-    //expect(reverseNumber(5)).toBe(5);
     expect(reverseNumber(104)).toBe(401);
     expect(reverseNumber(12345)).toBe(54321);
-    expect(reverseNumber(100)).toBe(1); // No leading 0 necessary
+    expect(reverseNumber(100)).toBe(1);
   });
 });
 
@@ -89,7 +88,6 @@ describe.only("findNeedle", () => {
     };
     expect(findNeedle(obj1, "table")).toBe(true);
 
-    // Note that the objects provided to the function could have any keys/values
     const obj2 = {
       product_name: "Sparkle n Shine Dishwasher Tablets",
       price: 1.99,
@@ -164,7 +162,6 @@ describe("getWordFrequencies", () => {
   });
 
   test("ignores punctuation", () => {
-    // Hint: Google "JavaScript remove special characters from string" to get some ideas!
     expect(
       getWordFrequencies("Hello, hello hello! What have we here?")
     ).toEqual({
