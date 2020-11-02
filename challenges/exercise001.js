@@ -73,11 +73,6 @@ function getMeanScore(scores) {
   else {
     result = (total/scores.length);}
     return result;
-    //var mn = (total / (scores.length)); -- this works too !
-    // var result = (mn - Math.floor(mn)) !== 0;
-    // if (result)
-    // {return Number(mn.toFixed(2));}
-    // else {return mn;}
   }
 
 function simpleFizzBuzz(n) {

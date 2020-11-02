@@ -7,9 +7,6 @@
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
   if(!Array.isArray(arr)) throw new Error("an Array is required");
-  //loop through the array
-  //if the number is divisable 3 or 5, add to a total
-  //return total
   let total = 0;
   arr.forEach(n=> {
     if (n%5 === 0 || n%3 === 0) {
@@ -95,13 +92,6 @@ const createMatrix = (n, fill) => {
     c.push(r)
   }
   return c
-  // const arr = [];
-  // for (i=0;i<n ;i++) {
-  //   var row = new Array(n);
-  //   row.fill(fill);
-  //   arr.push(row);
-  // }
-  // return arr;
 };
 
 /**
