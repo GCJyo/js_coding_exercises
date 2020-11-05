@@ -1,16 +1,16 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  var sqrs = [ ];
+  let sqrs = [ ];
   for(let i in nums) {
   sqrs.push(Math.pow(nums[i], 2));} return sqrs;
 }
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var result="";
+  let result="";
   words.forEach(myFunction);
   function myFunction(i, indx) {
-          var add = i.toLowerCase();
+          let add = i.toLowerCase();
     result += (indx === 0 ? add : add[0].toUpperCase() + add.slice(1));
       };
       return result;

@@ -46,7 +46,7 @@ function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
   let revwrds = [];
   let x = " ";
-  for(var i= 0; i<words.length; i++)
+  for(let i= 0; i<words.length; i++)
   {x= words[i].split("").reverse().join("");
     revwrds.push(x);}
   return revwrds;
@@ -64,8 +64,8 @@ function countLinuxUsers(users) {
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   let result = " ";
-  var total = 0;
-  for (var i = 0; i < scores.length; i++) {
+  let total = 0;
+  for (let i = 0; i < scores.length; i++) {
     total += scores[i];
     }
     if ((Number.isInteger(total/scores.length)) == false) {

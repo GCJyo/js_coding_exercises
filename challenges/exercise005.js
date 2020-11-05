@@ -7,8 +7,8 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  var a = 0;
-  var b = 0;
+  let a = 0;
+  let b = 0;
   const numbers = str.split("");
   numbers.forEach(number => (number == 0) ? a++ : b++)
   return {0:a, 1:b};

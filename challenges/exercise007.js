@@ -20,7 +20,7 @@ const createRange = (start, end, step) => {
   const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
-  var userScrTime=[]
+  let userScrTime=[]
   users.forEach(element => {
     element.screenTime.forEach (arrele=>{
       
@@ -38,8 +38,8 @@ const createRange = (start, end, step) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
   hexstr =hexStr.replace("#","");
     hexstr = hexstr.trim();
-    var tab = hexstr.match(/.{1,2}/g);
-    var rgb = [parseInt(tab[0],16),parseInt(tab[1],16),parseInt(tab[2],16)];
+    let tab = hexstr.match(/.{1,2}/g);
+    let rgb = [parseInt(tab[0],16),parseInt(tab[1],16),parseInt(tab[2],16)];
     return rgb;
 };
 const findWinner = board => {

@@ -44,12 +44,12 @@ const getComplementaryDNA = str => {
 const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
-  var r = []
-  var c = []
-  for (var i = 0; i < n; i++) {
+  let r = []
+  let c = []
+  for (let i = 0; i < n; i++) {
     r.push(fill)
   }
-  for (var x = 0; x < n; x++) {
+  for (let x = 0; x < n; x++) {
     c.push(r)
   }
   return c
